@@ -1,0 +1,275 @@
+/****************
+  Overall
+****************/
+body {
+  position: relative;
+  /*background-color: black;
+  color: white;*/
+  transition: background-color .25s linear;
+}
+body.dark {
+  background-color: #333;
+  color: white;
+}
+body * {transition: color .25s linear;}
+hr.dark {
+  color: white;
+}
+#content {
+  margin-top: 60px;
+}
+.background-video {margin-top: -60px}
+#loadingScreen {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  background-color: green;
+  z-index: 1000;
+}
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    margin: auto;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/****************
+1.
+Navbar
+****************/
+nav {
+  top: 0px;
+  margin-top: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  height: 50px;
+  z-index: 100;
+}
+/* Info: nav * doesn't work because of the images and buttons reaching a
+way too big point */
+nav .container {height: 50px;}
+nav .nav-item {
+  height: 50px;
+  padding-top: 5px;}
+nav.navbar {
+  position: fixed;
+  width: 100%;}
+li.nav-item {
+  padding-left: 5px;
+  padding-right: 5px;}
+
+nav {background-color: green;}
+nav a {color: white;}
+.navbar-brand img {margin-top: -5px;}
+.navbar-collapse * {
+  background-color: green;
+}
+nav .btn {color: white;}
+
+  /**
+  1.1
+  Hover over item
+  **/
+  nav .nav-item:hover {background-color: lightgreen; cursor: pointer;}
+  nav .nav-item:hover * {background-color: lightgreen;}
+  nav .nav-item:hover a {color: black;}
+  .navbar-brand:hover {color:lightgrey;}
+  nav .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  }
+  nav .navbar-toggler-icon:hover {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(201, 201, 201, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  }
+  .navbar-toggler {color:rgba(0,0,0,.5);border-color:green}
+  nav .btn:hover {
+    height:50px;
+    border-radius:0px;
+    background-color:lightgreen;
+    color:black;
+  }
+  nav .btn:active {border-width: 0px; box-shadow: unset;}
+  nav .btn:focus {border-width: 0px; box-shadow: unset;}
+
+  /**
+  1.2
+  Phone
+  **/
+  @media(max-width:992px) {
+    nav {
+      padding-top: 0px !important;
+    }
+  }
+
+  /**
+  1.3
+  Transparency up on scroll down - video
+  **/
+  nav.opacize {background-color: #00800080}
+  nav.opacize * {background-color: transparent}
+  nav .btn {transition: none;}
+
+/*****************
+2.
+Video
+*****************/
+.background-video {
+  width: 100%;
+  /*max-height: 500px;*/
+  min-height: 300px;
+  /*height: 100%;*/
+  background-color: orange;
+  z-index: 1;
+}
+
+/*******************
+3.
+Login and Register Form
+*******************/
+.form-container {
+  /*transition: border-color .15s ease;*/
+  position: absolute;
+  top: calc(50% - 60px);
+  left: 50%;
+  width: 25%;
+  /*border-radius: 10px;
+  border: 10px solid rgba(0, 0, 0, 0.4);*/
+  transform: translate(-50%, -50%);
+  padding: 20px 30px;
+}
+@media (max-width: 992px) {
+  .form-register {width:100%;}
+}
+@media (min-width: 992px) {
+  .form-register {width: 40%;}
+}
+/*
+.form-container:focus-within {
+  border-radius: 10px;
+  border: 10px solid rgba(0, 128, 0, 0.4);}
+*/
+.form-container a:hover {text-decoration: none}
+.form-container a:active {text-decoration: none;}
+.form-container a:focus {text-decoration: none;}
+.form-control:invalid:not(:focus) {box-shadow: none; outline-width:0px;}
+#confirm_password {margin-top:5px;}
+.nav a {color: black;}
+.input-group-text {cursor: default;}
+#info {margin-bottom: 0px}
+hr {margin-bottom: 0px; margin-top: 5px;}
+#info_container {margin-bottom: 5px;}
+
+/************************
+4.
+Footer
+************************/
+#footer {
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  left: 0px;
+  top: calc(100% - 50px);
+  background-color: grey;
+}
+#footer ul {margin-bottom: 0px;}
+#footer li {
+  margin-top: 15px;
+}
+
+/***************************
+5.
+Dashboard
+***************************/
+iframe * {cursor: hand; !important}
+#site {width: 100%; height: 100%; padding: 60px 15px 10px 15px; display: grid; grid-template-columns: 50% auto; grid-gap: 10px;}
+#site .data {border: 1px solid black; display: grid; grid-template-columns: auto auto auto;}
+#site .payments {border: 1px solid black;}
+.payments {}
+.add_payment {text-align: center; cursor:pointer; margin-top:15px;}
+.add_payment .oi.oi-plus {height: 8px; top: -4px;}
+.add_payment hr.two {margin-top: 0px;}
+.add_payment hr {border-width: 2px;}
+.icon.circle {border: 2px solid #ccc; border-radius: 100%; position: absolute; width: 31px; height: 31px; background-color: white;transform: translate(calc(-25%), calc(-25% - 3.5px))}
+#quarter_left_top {
+  left: 0px;
+  top: 0px;
+}
+
+/***************************
+6.
+Sliders
+***************************/
+/* The switch - the box around the slider */
+.switch {
+ position: relative;
+ display: inline-block;
+ width: 40px;
+ height: 22px;}
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+/* The slider */
+.slider {
+ position: absolute;
+ cursor: pointer;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ background-color: #ccc;
+ -webkit-transition: .4s;
+ transition: .4s;
+}
+.slider:before {
+ position: absolute;
+ content: "";
+ height: 18px;
+ width: 18px;
+ left: 2px;
+ bottom: 2px;
+ background-color: white;
+ -webkit-transition: .4s;
+ transition: .4s;
+}
+input:checked + .slider {background-color: #2196F3;}
+.switch-black-white input:checked + .slider {background-color: white}
+.switch-black-white input:checked + .slider::before {background-color: black}
+.switch-black-white input:checked + .slider {border: 1px solid #ccc; height: 23px;}
+.switch-black-white input + .slider {background-color: black}
+.switch-black-white input + .slider::before {background-color: white;}
+input:focus + .slider {box-shadow: 0 0 1px #2196F3;}
+input:checked + .slider:before {
+ -webkit-transform: translateX(17px);
+ -ms-transform: translateX(17px);
+ transform: translateX(17px);}
+
+/* Rounded sliders */
+.slider.round {border-radius: 34px;}
+.slider.round:before {border-radius: 50%;}
+
+/***************************
+7.
+Settings
+***************************/
+.setting {
+  position: absolute;
+  left: 50%;
+  width: 40%;
+
+  transform: translate(-50%, 0);
+  padding: 20px 30px;
+}
+.setting .row {margin-top: 8px;}
+.setting label {text-align: left; font-size: 1.05em; margin-bottom: 0px; padding-bottom: 0px; padding-top: 4px;}
+.setting div {text-align: right;}
+.setting .form-control {padding: 0px .75rem; height: calc(2rem + 2px) !important; width: 7rem; float: right;}
+.setting input[type="text"] {width: 100%;}
+.setting input[type="password"] {width: 100%; margin-bottom: 3px;}

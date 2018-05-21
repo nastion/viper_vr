@@ -1,0 +1,68 @@
+<html>
+<head>Some Title</head>
+<body>
+<div class="container form-register form-container">
+    <form method="POST" th:action="@{/login}">
+        <ul class="nav nav-tabs nav-fill">
+            <li class="nav-item">
+                <a class="nav-link" href="#user">User</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#comp">Company</a>
+            </li>
+        </ul>
+        <div class="form-group">
+            <label for="compname">Company Name</label>
+            <input type="text" name="compname" class="form-control" id="compname" aria-describedby="compname_help" placeholder="Name of the Company" required>
+            <small id="compname_help" class="form-text text-muted"></small>
+        </div>
+        <div class="form-group">
+            <label for="shortname">Short Title</label>
+            <input type="text" name="shortname" class="form-control" id="shortname" pattern=".{3,6}" aria-describedby="shortname_help" placeholder="Short title of your company" required>
+            <small id="shortname_help" class="form-text text-muted"></small>
+        </div>
+        <div class="form-group" id="info_container">
+            <label id="info" for="info_help">Admin Account</label>
+            <small id="info_help" class="form-text text-muted">
+                This account is going to be the first administrative account of your company for VIPER!<br/>
+                You can modify everything later on!
+            </small>
+            <hr>
+        </div>
+        <div class="form-group">
+            <label for="firstname">First Name</label>
+            <input type="text" name="firstname" class="form-control" id="firstname" aria-describedby="firstname_help" placeholder="First Name" required>
+            <small id="firstname_help" class="form-text text-muted"></small>
+        </div>
+        <div class="form-group">
+            <label for="lastname">Last Name</label>
+            <input type="text" name="lastname" class="form-control" id="lastname" aria-describedby="lastname_help" placeholder="Last Name" required>
+            <small id="lastname_help" class="form-text text-muted"></small>
+        </div>
+        <div class="form-group">
+            <label for="email">E-Mail</label>
+            <input type="email" name="email" class="form-control" id="email" aria-describedby="email_help" placeholder="E-Mail Address" required>
+            <small id="email_help" class="form-text text-muted"></small>
+        </div>
+        <div class="form-group">
+            <label for="username">Username</label>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">@</div>
+                </div>
+                <input type="text" class="form-control" name="username" id="username" aria-describedby="username_help" placeholder="Username" required>
+            </div>
+            <small id="username_help" class="form-text text-muted">Please choose a unique Username!</small>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" name="password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" aria-describedby="password_help" onkeyup="checkPassword()" placeholder="Password" required>
+            <input type="password" class="form-control" id="confirm_password" aria-describedby="password_help" onkeyup="checkPassword()" placeholder="Confirm Password" required>
+            <small id="password_help" class="form-text text-muted"></small>
+        </div>
+        <button type="submit" class="btn btn-primary">Register</button>
+        <small class="form-text text-primary"><a href="?site=login">Already have an account? Sign in!</a></small>
+    </form>
+</div>
+</body>
+</html>

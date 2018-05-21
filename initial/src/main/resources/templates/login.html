@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Login Example</title>
+
+    <link href="/bootstrap.min.css" rel="stylesheet">
+    <link href="<c:url value="/resources/static/main.css" />" rel="stylesheet">
+</head>
+<body>
+<div class="container form-container">
+    <form method="POST" th:action="@{/login}">
+        <div th:if="${param.error}">
+            Invalid username and password.
+        </div>
+        <div class="form-group">
+            <label for="identifier">Username or E-Mail</label>
+            <input type="text" name="username" class="form-control" id="identifier" aria-describedby="identifier_help" placeholder="Enter Username or E-Mail">
+            <small id="identifier_help" class="form-text text-muted"></small>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" class="form-control" id="password" aria-describedby="password_help" placeholder="Enter Password">
+            <small id="password_help" class="form-text text-muted">Your data will be handled securely.</small>
+        </div>
+        <input type="submit" class="btn btn-primary" value="Sign in" />
+        <small class="form-text text-primary"><a href="?site=register">Don't have an account yet? Register!</a></small>
+    </form>
+</div>
+
+</body>
+</html>
